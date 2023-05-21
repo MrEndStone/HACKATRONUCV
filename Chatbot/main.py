@@ -1,9 +1,10 @@
 import nltk
-nltk.download('punkt')
-
+from flask import Flask, request, jsonify
 from nltk.tokenize import word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
+
+app = Flask(__name__)
 
 # Datos de entrenamiento
 entrenamiento = [
@@ -12,6 +13,7 @@ entrenamiento = [
     ("¿Qué hora es?", "tiempo"),
     ("Cuéntame un chiste", "chiste"),
     ("Adiós", "despedida"),
+    ("Adios", "despedida"),
 ]
 
 # Preparar datos de entrenamiento
@@ -37,24 +39,25 @@ def clasificar_intencion(pregunta):
     intencion = clasificador.predict(vector)[0]
     return intencion
 
-# Función principal del chatbot
+# Ruta para el servicio web
+@app.route('/chatbot', methods=['POST'])
 def chatbot():
-    print("¡Hola! Soy un chatbot. ¿En qué puedo ayudarte hoy?")
-    while True:
-        pregunta = input("Tú: ")
-        if pregunta.lower() == "adiós":
-            print("Chatbot: ¡Hasta luego! Fue un placer ayudarte.")
-            break
+    pregunta = request.json['pregunta']
+    if pregunta.lower() == "adiós":
+        respuesta = "¡Hasta luego! Fue un placer ayudarte."
+    else:
         intencion = clasificar_intencion(pregunta)
         if intencion == "saludo":
-            print("Chatbot: ¡Hola! ¿En qué puedo ayudarte?")
+            respuesta = "¡Hola! ¿En qué puedo ayudarte?"
         elif intencion == "tiempo":
-            print("Chatbot: Lo siento, no puedo decirte la hora en este momento.")
+            respuesta = "Lo siento, no puedo decirte la hora en este momento."
         elif intencion == "chiste":
-            print("Chatbot: ¿Por qué los pájaros no usan Facebook? Porque ya tienen Twitter.")
+            respuesta = "¿Por qué los pájaros no usan Facebook? Porque ya tienen Twitter."
         else:
-            print("Chatbot: Lo siento, no entendí tu pregunta.")
+            respuesta = "Lo siento, no entendí tu pregunta."
+    
+    return jsonify({'respuesta': respuesta})
 
-# Ejecutar el chatbot
 if __name__ == "__main__":
-    chatbot()
+    nltk.download('punkt')  # Descargar recursos de NLTK
+    app.run()
