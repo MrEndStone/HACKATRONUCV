@@ -80,6 +80,6 @@ formSignup.addEventListener('submit', async (ev) => {
   }
 })
 
-document.addEventListener('DOMContentLoaded', (ev) => {
+/*document.addEventListener('DOMContentLoaded', (ev) => {
   validateToken();
-})
+})*/

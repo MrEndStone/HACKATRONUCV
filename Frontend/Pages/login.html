@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackaton</title>
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="../Css/alert.css">
+  <link rel="stylesheet" href="../Css/login.css">
+  <link rel="stylesheet" href="../Css/button.css">
+  <link rel="stylesheet" href="../Css/control.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="container--left">
+      <div class="panel" id="panel--sign-up">
+        <div class="content">
+          <h3>¿ Eres docente ?</h3>
+          <p>Ingresa con tu usuario docente.</p>
+          <p>Para iniciar ¡haz clic acá!</p>
+          
+          <button class="btn transparent"
+            type="submit"
+            id="sign-up-btn"
+            name="sign-up-btn">
+            Soy docente
+          </button>
+        </div>
+        <div class="image image--left"></div>
+      </div>
+
+      <form action="../../Controllers/loginController.php" method="POST" id="form--sign-in" class="form block">
+        <h2 class="title">Docentes</h2>
+      <div class="control">
+        <i class="bx bxs-envelope"></i>
+        <input type="email" placeholder="Correo" id="emailSignup" name="emailSignup" />
+      </div>
+      <div class="control">
+        <i class="bx bxs-lock"></i>
+        <input type="password" placeholder="Contraseña" id="passwordSignup" name="passwordSignup" />
+      </div>
+        <button class="btn"
+            type="submit"
+            id="btnSignup"
+            name="btnSignup">
+            Iniciar Sesión
+          </button>
+      </form>
+    </div>
+
+    <div class="container--right">
+      <div class="panel block" id="panel--sign-in">
+        <div class="content">
+          <h3>¿ Eres un estudiante Vallejiano ?</h3>
+          <p> Para iniciar ¡haz clic acá!</p>
+
+          <button class="btn transparent"
+            type="submit"
+            id="sign-in-btn"
+            name="sign-in-btn">
+            Soy estudiante
+          </button>
+        </div>
+        <div class="image image--right"></div>
+      </div>
+
+      <form action="../../Controllers/loginController.php" method="POST" id="form--sign-up" class="form">
+        <h2 class="title">Estudiantes</h2>
+        <div class="control">
+          <i class="bx bxs-envelope"></i>
+          <input type="email" placeholder="Correo" id="emailSignin" name="emailSignin" />
+        </div>
+        <div class="control">
+          <i class="bx bxs-lock"></i>
+          <input type="password" placeholder="Contraseña" id="passwordSignin" name="passwordSignin" />
+        </div>
+         <button class="btn"
+            type="submit"
+            id="btnSignin"
+            name="btnSignin">
+            Iniciar Sesión
+          </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert block" id="loginAlert">
+    <div>
+      <i class='bx bxs-x-circle' id="closeLoginAlert"></i>
+      <span></span>
+    </div>
+  </div>
+
+  <script src="../Scripts/login.js" type="module"></script>
+</body>
+
+</html>
