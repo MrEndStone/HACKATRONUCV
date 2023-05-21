@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+input {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.container:before {
+    content: "";
+    position: absolute;
+    height: 4000px;
+    width: 4000px;
+    background: linear-gradient(-45deg, #4d84e2 0%, #6086F7 100%);
+    clip-path: circle(250px at 50vw 0%);
+    -webkit-clip-path: circle(250px at 50vw 0%);
+    transition: all 1.5s;
+    z-index: 6;
+}
+
+.container--left {
+    grid-row: 1/2;
+    display: grid;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.container--right {
+    z-index: 6;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.panel {
+    z-index: 6;
+    height: 100%;
+}
+
+.content {    
+    max-width: 400px;
+    margin: auto;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    color: #eee;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    display: none;
+    width: 100%;
+    transition: transform 1.1s ease-in-out;
+    transition-delay: 0.4s;
+    padding: 2rem;
+}
+
+.image--left {
+    background: url('../Assets/login.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.image--right {
+    background: url('../Assets/register.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: opacity 2s ease-out;
+}
+
+.form__link {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.container.sign-up:before {
+    clip-path: circle(250px at 50vw calc(100vh + 30px));
+    -webkit-clip-path: circle(250px at 50vw calc(100vh + 30px));
+}
+
+.container.sign-up .container--left {
+    z-index: 10;
+    animation: fadeLeft 1s ease-out;
+}
+
+.container.sign-up .container--right {
+    z-index: 7;
+    animation: fadeRight 1s ease-out;
+}
+
+@media screen and (min-width: 768px) {
+    .container::before {
+        clip-path: circle(70vw at 0 0);
+        -webkit-clip-path: circle(70vw at 0 0);
+        animation: none;
+        transition: all 1.5s;
+    }
+    
+    .container.sign-up:before {
+        clip-path: circle(70vw at 100vw 0);
+        -webkit-clip-path: circle(70vw at 100vw 0);
+        animation: none;
+    }
+
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .container--left {
+        grid-row: 1/3;
+    }
+
+    .container--right {
+        grid-column: 2/3;
+        grid-row: 1/3;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        z-index: 6;
+    }
+
+    .panel {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-row: 1/3;
+    }
+
+    .image {
+        grid-row: 2/3;
+        display: block;
+    }
+
+    .form {
+        grid-row: 1/3;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .content {
+        max-width: 600px;
+    }
+
+    h2, h3 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 1.5rem;
+    }
+}
+
+.block {
+    display: none;
+    height: 0;
+    width: 0;
+}

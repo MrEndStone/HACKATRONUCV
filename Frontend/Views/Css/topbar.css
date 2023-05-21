@@ -1,0 +1,24 @@
+.header {
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: #6086F7;
+    background: #fff;
+}
+
+.header--right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header__username {
+    font-weight: bold;
+}
+
+.header__title {
+    text-transform: capitalize;
+}

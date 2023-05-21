@@ -1,0 +1,133 @@
+.sectionVerification {
+    width: 100%;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    padding: 2rem;
+    background: #fff;
+}
+
+.sectionVerification--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sectionVerification--header a.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.verification__container {
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.verification__subtitle {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.verification__services--header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1rem 0;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.verification__services--header div {
+    color: #333;
+}
+
+.verification__services--item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #333;
+    align-items: center;
+}
+
+.verification__services--image {
+    height: 50px;
+    width: 50px;
+}
+
+.verification__services--image img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.verification__services--bold {
+    font-weight: bold;
+}
+
+.verification__resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 1rem;
+    color: #333;
+}
+
+.verification__resumen--important {
+    font-weight: bold;
+    color: #333;
+}
+
+.verification__services--header div:nth-child(1),
+.verification__resumen div:nth-child(1) {
+    grid-column: 2/3;
+}
+
+.verification__card svg {
+    height: 25px;
+    width: 50px;
+}
+
+.verification__date {
+    color: #333;
+    font-size: 0.8rem;
+}
+
+.important {
+    color: orange;
+}
+
+.important span {
+    font-weight: 600;
+}
+
+.verification__btn {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    background: rgb(0, 128, 0, 0.8);
+    padding: 0.8rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    display: block;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.verification__btn:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}

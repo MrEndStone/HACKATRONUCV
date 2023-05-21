@@ -1,0 +1,52 @@
+.alert {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(66, 66, 66, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.alert div {
+    border-radius: 25px;
+    background: #ddd;
+    width: 90%;
+    max-width: 920px;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 1rem;
+}
+
+.alert i {
+    position: absolute;
+    top: calc(0% + 20px);
+    left: calc(100% - 50px);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.alert i:hover {
+    transition: all 0.5s;
+    transform: scale(1.5);
+}
+
+.alert span {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.alert--success {
+    color: #4d8334;
+}
+
+.alert--error {
+    color: #964545;
+}

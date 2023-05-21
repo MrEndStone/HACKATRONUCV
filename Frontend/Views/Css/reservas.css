@@ -1,0 +1,37 @@
+.reservas {
+    width: 100%;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    padding: 2rem;
+    background: #fff;
+}
+
+.row--right {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 2rem;
+}
+
+.data {
+    border: 3px solid #333;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.data th,
+.data td {
+    padding: 1rem;
+    color: #333;
+}
+
+.data th {
+    font-weight: bold;
+    border: 3px solid #333;
+}
+
+.data td {
+    color: #666;
+    font-weight: 300;
+}
